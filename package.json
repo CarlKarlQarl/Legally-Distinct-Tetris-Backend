@@ -1,0 +1,19 @@
+{
+  "name": "tetris-backend",
+  "version": "1.0.0",
+  "description": "Backend for Tetris game, holding highscores and user authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlKarlQarl/Legally-Distinct-Tetris-Backend.git"
+  },
+  "author": "Karl Matthes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlKarlQarl/Legally-Distinct-Tetris-Backend/issues"
+  },
+  "homepage": "https://github.com/CarlKarlQarl/Legally-Distinct-Tetris-Backend#readme"
+}
