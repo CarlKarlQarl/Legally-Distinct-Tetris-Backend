@@ -18,8 +18,8 @@ app.get("/", (request, response, next) => {
 
 app.get("/users", (request, response, next) => {
     database("user")
-        .then(dogs => {
-            response.json(dogs)
+        .then(users => {
+            response.json(users)
         })
         .catch(error => next(error))
 })
@@ -37,6 +37,26 @@ app.post("/users", (request, response, next) => {
             })
             .catch(error => next(error))
     })
+})
+
+app.get("/scores", (request, response, next) => {
+    database("score")
+        .then(scores => {
+            response.json(scores)
+        })
+        .catch(error => next(error))
+})
+
+app.post("/scores", (request, response, next) => {
+    database("score").insert({
+        points: request.body.points,
+        user_id: request.body.user_id
+    })
+        .returning(["id", "points", "user_id"])
+        .then(scores => {
+            response.json(scores[0])
+        })
+        .catch(error => next(error))
 })
 
 app.post("/login", (request, response, next) => {
