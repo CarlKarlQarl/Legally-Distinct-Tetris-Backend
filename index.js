@@ -86,4 +86,18 @@ app.post("/login", (request, response, next) => {
         })
 })
 
+app.get("/verify", (request, response, next) => {
+    const token = request.headers.authorization.split(" ")[1]
+    jwt.verify(token, SECRET, (error, decodedToken) => {
+        if (error){
+            response.status(401).json({ message: "Unauthorized Access!"})
+        } else {
+            response.status(200).json({
+                id: decodedToken.id,
+                username: decodedToken.username
+            })
+        }
+    })
+})
+
 app.listen(PORT)
