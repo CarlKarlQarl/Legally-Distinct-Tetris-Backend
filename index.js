@@ -19,7 +19,12 @@ app.get("/", (request, response, next) => {
 app.get("/users", (request, response, next) => {
     database("user")
         .then(users => {
-            response.json(users)
+            response.json(users.map(user => {
+                return {
+                    id: user.id,
+                    username: user.username
+                }
+            }))
         })
         .catch(error => next(error))
 })
@@ -31,7 +36,7 @@ app.post("/users", (request, response, next) => {
             username: request.body.username,
             password_digest: hashedPassword
         })
-            .returning(["id", "username", "password_digest"])
+            .returning(["id", "username"])
             .then(users => {
                 response.json(users[0])
             })
