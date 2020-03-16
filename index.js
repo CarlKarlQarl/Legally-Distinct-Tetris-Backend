@@ -64,6 +64,13 @@ app.post("/scores", (request, response, next) => {
         .catch(error => next(error))
 })
 
+app.delete("/scores/:id", (request, response, next) => {
+    database("score")
+        .where({id: request.params.id})
+        .del()
+        .then(response.json("DELETE request successful"))
+})
+
 app.post("/login", (request, response, next) => {
     database("user")
         .where({username: request.body.username})
