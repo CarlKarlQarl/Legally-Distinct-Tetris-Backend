@@ -4,8 +4,11 @@ This is the back-end repository for my Tetris clone. It was built with Node, and
 
 The models are a user, with a username and password, and a score, with points and a reference to a user. Authentication is handled by hashing the user's password with bcrypt, and encoding/decoding with JWT.
 
+# Play !Tetris
+https://legally-distinct-tetris.firebaseapp.com/
+
 # Links
-- Front-end Repo: https://github.com/CarlKarlQarl/Legally-Distinct-Tetris
+- Heroku: https://dashboard.heroku.com/apps/legally-distinct-tetris-node
 - Back-end Repo: https://github.com/CarlKarlQarl/Legally-Distinct-Tetris-Backend
 - Local repos (because I'm going to forget):
     - /Users/flatironschool/Flatirons/5Mod/capstone/tetris
